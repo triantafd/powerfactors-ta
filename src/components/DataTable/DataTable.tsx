@@ -13,9 +13,11 @@ import TableBody from '../TableBody';
 import PieChart from '../PieChart';
 import CustomModal from '../CustomModal';
 import { debounce } from '../../utils/debounce';
-
 import './DataTable.css';
 import { CustomLoadingSpinner } from '../Spinner';
+import { SkeletonLoader } from '../SkeletonLoader';
+
+
 
 const DataTable = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -64,9 +66,7 @@ const DataTable = () => {
 
   const tableRowHandler = (value: ICharacter | null) => setSelectedCharacter(value)
 
-  if (loading) {
-    return <CustomLoadingSpinner />
-  } else if (error) {
+  if (error) {
     return <div>error</div>
   } else {
     return (
@@ -141,11 +141,14 @@ const DataTable = () => {
                   columns={disneyCharacterColumns}
                   sortingModel={sortingModel}
                 />
-                <TableBody
-                  onClick={tableRowHandler}
-                  columns={disneyCharacterColumns}
-                  sortedCharacters={sortedCharacters}
-                />
+                {loading ?
+                  <SkeletonLoader pageSize={pageSize} />
+                  : <TableBody
+                    onClick={tableRowHandler}
+                    columns={disneyCharacterColumns}
+                    sortedCharacters={sortedCharacters}
+                  />
+                }
               </Table>
             </div>
             <div className='flex w-10/12 mt-4'>

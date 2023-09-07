@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface IFooterProps {
-  // ... your prop definitions ...
 }
 
 const Footer: React.FC<IFooterProps> = (props) => {
