@@ -19,25 +19,25 @@ A comprehensive guide to the React application's structure and components.
     |-- components/
     | |-- DataTable/
     | |-- Layout/
-    |   |-- Footer/
-    |   |-- Header/
+    |  |-- Footer/
+    |  |-- Header/
     | | modals/
-    |   |-- LoginForm/
-    |   |-- CustomModal/
+    |  |-- LoginForm/
+    |  |-- CustomModal/
     | | utilities/
-    |   |-- PieChart/
-    |   |-- SkeletonLoader/
+    |  |-- PieChart/
+    |  |-- SkeletonLoader/
     | |-- Pagination/
     | |-- PieChart/
     | |-- CharacterPopUpInfo/
     | |-- Table/
-    |   |-- TableHead/
-    |   |-- TableBody/ 
-    |   |-- TableRow/ 
+    |  |-- TableHead/
+    |  |-- TableBody/ 
+    |  |-- TableRow/ 
     |-- conf/ | -- characterTableData.ts
-    | |-- store/
-    |   |-- actions/
-    |   |-- reducers/ 
+    |-- store/
+    | |-- actions/
+    | |-- reducers/ 
     |-- services/ | -- disneyService.ts
     |-- utils/
     | |-- debounce.ts

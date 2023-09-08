@@ -7,7 +7,7 @@ const Footer: React.FC<IFooterProps> = (props) => {
   return (
     <footer className="bg-black">
       {/*   <-- Container --> */}
-      <div className="container max-w-6xl py-10 mx-auto">
+      <div className="container max-w-7xl py-10 mx-auto">
         {/*   <-- Footer Flex Container --> */}
         <div
           className="flex flex-col items-center mb-8 space-y-6 md:flex-row md:space-y-0 md:justify-between md:items-start"

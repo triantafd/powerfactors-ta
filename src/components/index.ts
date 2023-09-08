@@ -9,4 +9,4 @@ export { default as CustomModal } from "./modals/CustomModal";
 export { default as SkeletonLoader } from "./utilities/SkeletonLoader";
 export { default as DataTable } from "./DataTable";
 export { default as Layout } from "./Layout";
-
+export { default as CharacterPopUpInfo } from "./CharacterPopUpInfo";
