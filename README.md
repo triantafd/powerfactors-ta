@@ -112,24 +112,24 @@ A comprehensive guide to the React application's structure and components.
 
     - **Styling**: Uses a dedicated CSS file: `DataTable.css`.
 
-    - **Filtering**:  How to Use
-      1. **Filtering**:
+    - **How to Use**:  How to Use
+      - **Filtering**:
         - Type in the `Search by Name` or `Search by TV Show` input fields to filter the table data.
         - Filtering is debounced, meaning the API call to fetch filtered data will be made a short while after the user stops typing to ensure optimal performance.
 
-      2. **Sorting**:
+      -  **Sorting**:
         - Click on the column headers to sort the data based on that column.
         - The sorting direction (ascending/descending) toggles with each click.
 
-      3. **View Character Details**:
+      - **View Character Details**:
         - Click on a table row to view detailed information about the selected character in a popup modal.
 
-      4. **View Pie Chart**:
+      - **View Pie Chart**:
         - Click the `Show Pie Chart` button to open a modal displaying a pie chart of the characters based on their TV show appearances.
 
-      5. **Pagination**:
+      - **Pagination**:
         - Use the pagination controls below the table to navigate between pages or adjust the number of rows displayed per page.
-        
+
       ## TODO
 
       - **Refine Filtering**:
@@ -179,4 +179,3 @@ A comprehensive guide to the React application's structure and components.
 1. **Error Handling**: Handle various types of errors distinctly.
 2. **Unit Tests**: Write tests for actions, reducers, services.
 3. **Redux Toolkit**: Simplify boilerplate.
-4. **Caching**: Implement a caching mechanism.
