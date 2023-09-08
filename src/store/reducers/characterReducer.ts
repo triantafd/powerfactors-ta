@@ -5,10 +5,10 @@ import {
   FETCH_CHARACTERS_REQUEST,
   FETCH_CHARACTERS_SUCCESS,
   FETCH_CHARACTERS_FAILURE,
-} from "../actions/characterActions";
+} from "store/actions/characterActions";
 import { Action } from "redux";
-import { RootState } from "../store";
-import { ICharacterService } from "../../services/disneyService";
+import { RootState } from "store/store";
+import { ICharacterService } from "services/disneyService";
 
 interface CharacterState {
   characters: ICharacterService["data"];

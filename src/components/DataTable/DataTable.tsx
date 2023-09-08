@@ -4,13 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 
 // React Components
-import Pagination from '../Pagination';
-import TableHead from '../TableHead';
-import Table from '../Table';
-import TableBody from '../TableBody';
-import PieChart from '../PieChart';
-import CustomModal from '../CustomModal';
-import { SkeletonLoader } from '../SkeletonLoader';
+import {
+  Pagination, TableHead, Table, TableBody,
+  PieChart, CustomModal, SkeletonLoader
+} from 'components';
 
 // State Management (Redux)
 import { fetchCharacters } from '../../store/actions/characterActions';
@@ -26,8 +23,6 @@ import { debounce } from '../../utils/debounce';
 
 // Assets and Styling
 import './DataTable.css';
-
-
 
 const CharacterPopUpInfo: React.FC<{ selectedCharacter: ICharacter | null }> = ({ selectedCharacter }) => {
   return (

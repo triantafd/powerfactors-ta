@@ -1,6 +1,6 @@
 /** @format */
 
-import { ICharacter } from "../services/disneyService";
+import { ICharacter } from "services/disneyService";
 
 export interface ITableColumnConfig {
   field: keyof ICharacter;

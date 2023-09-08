@@ -1,10 +1,10 @@
 /** @format */
-import { ITableColumnConfig } from "../../conf/charactersTableData";
-import { ICharacter } from "../../services/disneyService";
+import { ITableColumnConfig } from "conf/charactersTableData";
+import { ICharacter } from "services/disneyService";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FilterListIcon from '@mui/icons-material/FilterList';
-import { SortedByState } from "../../utils/sortingUtils";
+import { SortedByState } from "utils/sortingUtils";
 
 interface TableHeadProps {
   columns: ITableColumnConfig[];

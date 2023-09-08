@@ -1,7 +1,7 @@
 import React from 'react';
-import { ICharacter } from '../../services/disneyService';
-import { ITableColumnConfig } from '../../conf/charactersTableData';
-import { TableRow } from '../TableRow';
+import { ICharacter } from 'services/disneyService';
+import { ITableColumnConfig } from 'conf/charactersTableData';
+import { TableRow } from 'components/TableRow';
 
 
 interface TableRowProps {
