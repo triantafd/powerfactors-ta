@@ -14,9 +14,28 @@ import PieChart from '../PieChart';
 import CustomModal from '../CustomModal';
 import { debounce } from '../../utils/debounce';
 import './DataTable.css';
-import { CustomLoadingSpinner } from '../Spinner';
 import { SkeletonLoader } from '../SkeletonLoader';
 
+
+const CharacterPopUpInfo: React.FC<{ selectedCharacter: ICharacter | null }> = ({ selectedCharacter }) => {
+  return (
+    <>
+      {
+        selectedCharacter &&
+        <div className='flex flex-col items-center justify-center '>
+          <h2 className='text-black font-semibold'>{selectedCharacter.name}</h2>
+          <img src={selectedCharacter.imageUrl} alt={selectedCharacter.name} />
+          <div>
+            <strong>TV Shows:</strong> {selectedCharacter.tvShows.join(', ')}
+          </div>
+          <div>
+            <strong>Video Games:</strong> {selectedCharacter.videoGames.join(', ')}
+          </div>
+        </div>
+      }
+    </>
+  );
+}
 
 
 const DataTable = () => {
@@ -41,6 +60,7 @@ const DataTable = () => {
     dispatch(fetchCharacters(currentPage, pageSize, searchQuery, tvShowFilter));
     setTrigger2((prev) => prev + 1)
   }, [dispatch, currentPage, pageSize, trigger]);
+  
   console.log(trigger2)
   useEffect(() => {
     setSortedCharacters(characters);
@@ -74,26 +94,18 @@ const DataTable = () => {
         <div className="container mx-auto">
           <div className="flex w-full flex-col items-center px-4 sm:px-6 lg:px-8 my-10">
             <div className="w-10/12">
-
+              {/* < ----- Selected User PopUp  -----> */}
               <CustomModal
                 isModalVisible={selectedCharacter}
                 setModalVisible={() => setSelectedCharacter(null)}
               >
-                {selectedCharacter &&
-                  <div className='flex flex-col items-center justify-center '>
-                    <h2 className='text-black font-semibold'>{selectedCharacter.name}</h2>
-                    <img src={selectedCharacter.imageUrl} alt={selectedCharacter.name} />
-                    <div>
-                      <strong>TV Shows:</strong> {selectedCharacter.tvShows.join(', ')}
-                    </div>
-                    <div>
-                      <strong>Video Games:</strong> {selectedCharacter.videoGames.join(', ')}
-                    </div>
-                  </div>
-                }
+                <CharacterPopUpInfo selectedCharacter={selectedCharacter} />
               </CustomModal>
 
+
+              {/* < ----- Show Pie Button + disney character Fiilter  -----> */}
               <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 space-y-4 lg:space-y-0">
+                {/* < ----- Show Pie Button   -----> */}
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded self-start"
                   onClick={() => setModalVisible(true)}
@@ -101,6 +113,7 @@ const DataTable = () => {
                   Show Pie Chart
                 </button>
 
+                {/* < -----  Disney character Filters   -----> */}
                 <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-2 lg:mt-0">
                   <input
                     type="text"
@@ -125,6 +138,8 @@ const DataTable = () => {
                 </div>
               </div>
 
+
+              {/* < ----- Pie Chart  -----> */}
               <CustomModal
                 isModalVisible={isModalVisible}
                 setModalVisible={() => setModalVisible(false)}
@@ -135,14 +150,16 @@ const DataTable = () => {
                   getValue={character => character.tvShows.length}
                 />
               </CustomModal>
+
+              {/* < ----- Table  -----> */}
               <Table>
                 <TableHead
                   onSort={sortData}
                   columns={disneyCharacterColumns}
                   sortingModel={sortingModel}
                 />
-                {loading ?
-                  <SkeletonLoader pageSize={pageSize} />
+                {loading
+                  ? <SkeletonLoader pageSize={pageSize} />
                   : <TableBody
                     onClick={tableRowHandler}
                     columns={disneyCharacterColumns}
@@ -151,6 +168,8 @@ const DataTable = () => {
                 }
               </Table>
             </div>
+
+            {/* < ----- PaginationOf Table  -----> */}
             <div className='flex w-10/12 mt-4'>
               <Pagination
                 pageSize={pageSize}
@@ -160,6 +179,7 @@ const DataTable = () => {
                 info={info}
               />
             </div>
+
           </div >
         </div>
       </div>
