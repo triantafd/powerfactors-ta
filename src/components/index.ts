@@ -8,4 +8,5 @@ export { default as PieChart } from "./PieChart";
 export { default as CustomModal } from "./CustomModal";
 export { default as SkeletonLoader } from "./SkeletonLoader";
 export { default as DataTable } from "./DataTable";
+export { default as Layout } from "./Layout";
 

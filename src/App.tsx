@@ -1,7 +1,6 @@
 import React from 'react';
 import 'App.css';
-import Layout from 'components/Layout';
-import { DataTable } from 'components';
+import { DataTable, Layout } from 'components';
 
 const App = () => {
   return (
