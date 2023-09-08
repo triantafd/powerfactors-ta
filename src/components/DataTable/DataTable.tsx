@@ -1,20 +1,32 @@
+// External Packages
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { ICharacter } from '../../services/disneyService';
-import Pagination from '../Pagination';
-import { fetchCharacters } from '../../store/actions/characterActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import { RootState } from '../../store/store';
-import { multiLevelSort, SortedByState } from '../../utils/sortingUtils';
-import { disneyCharacterColumns } from '../../conf/charactersTableData';
+
+// React Components
+import Pagination from '../Pagination';
 import TableHead from '../TableHead';
 import Table from '../Table';
 import TableBody from '../TableBody';
 import PieChart from '../PieChart';
 import CustomModal from '../CustomModal';
-import { debounce } from '../../utils/debounce';
-import './DataTable.css';
 import { SkeletonLoader } from '../SkeletonLoader';
+
+// State Management (Redux)
+import { fetchCharacters } from '../../store/actions/characterActions';
+import { RootState } from '../../store/store';
+
+// Type Definitions
+import { ICharacter } from '../../services/disneyService';
+
+// Utilities and Configurations
+import { multiLevelSort, SortedByState } from '../../utils/sortingUtils';
+import { disneyCharacterColumns } from '../../conf/charactersTableData';
+import { debounce } from '../../utils/debounce';
+
+// Assets and Styling
+import './DataTable.css';
+
 
 
 const CharacterPopUpInfo: React.FC<{ selectedCharacter: ICharacter | null }> = ({ selectedCharacter }) => {
