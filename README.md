@@ -151,7 +151,7 @@ A comprehensive guide to the React application's structure and components.
 - **Description**: Debounces a function to avoid excessive calls.
 - **Usage**: Useful during window resize or input change.
 
-### `src/utils/sorting.ts`
+### `src/utils/sortingUtils.ts`
 
 - **Description**: Utilities for sorting.
 - **Features**: Allows multi-level sorting based on multiple criteria.
