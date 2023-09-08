@@ -17,27 +17,31 @@ A comprehensive guide to the React application's structure and components.
 
     src/
     |-- components/
-    | |-- App/
     | |-- DataTable/
-    | |-- Footer/
-    | |-- Header/
     | |-- Layout/
-    | |-- LoginForm/
-    | |-- CustomModal/
+    |   |-- Footer/
+    |   |-- Header/
+    | | modals/
+    |   |-- LoginForm/
+    |   |-- CustomModal/
+    | | utilities/
+    |   |-- PieChart/
+    |   |-- SkeletonLoader/
     | |-- Pagination/
     | |-- PieChart/
-    | |-- SkeletonLoader/
     | |-- CharacterPopUpInfo/
     | |-- Table/
-    | |-- TableHead/
-    | -- TableBody/ |-- conf/ | -- tableConfig.ts
-    |-- redux/
+    |   |-- TableHead/
+    |   |-- TableBody/ 
+    |   |-- TableRow/ 
+    |-- conf/ | -- characterTableData.ts
     | |-- store/
-    | |-- actions/
-    | -- reducers/ |-- services/ | -- disneyService.ts
+    |   |-- actions/
+    |   |-- reducers/ 
+    |-- services/ | -- disneyService.ts
     |-- utils/
     | |-- debounce.ts
-    | `-- sorting.ts
+    | |-- sorting.ts
 
 ## Components & Main Files Overview
 
@@ -171,8 +175,6 @@ A comprehensive guide to the React application's structure and components.
 - **Features**: Constructs API URL based on parameters for flexible requests.
 
 ---
-
-**Note**: Always consult the source code for more specific details and nuances.
 
 ## Suggestions
 
