@@ -6,6 +6,7 @@ A comprehensive guide to the React application's structure and components.
 
 ## Table of Contents
 
+- [How to run the app locally](#how-to-run)
 - [Folder Structure](#folder-structure)
 - [Components & Main Files Overview](#components--main-files-overview)
 - [Utilities & Configurations](#utilities--configurations)
@@ -13,6 +14,11 @@ A comprehensive guide to the React application's structure and components.
 - [Service Layer](#service-layer)
 - [Further Steps](#further-steps)
 - [Disclaimer](#disclaimer)
+
+## How to run the app locally
+    - clone the repository
+    - npm install
+    - npm start
 
 ## Folder Structure
 
