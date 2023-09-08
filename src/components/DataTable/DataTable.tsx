@@ -60,12 +60,10 @@ const DataTable = () => {
     dispatch(fetchCharacters(currentPage, pageSize, searchQuery, tvShowFilter));
     setTrigger2((prev) => prev + 1)
   }, [dispatch, currentPage, pageSize, trigger]);
-  
-  console.log(trigger2)
+
   useEffect(() => {
     setSortedCharacters(characters);
   }, [characters]);
-
 
   const sortData = useCallback((field: keyof ICharacter) => {
     const existingSort = sortingModel.find((sort) => sort.field === field);
