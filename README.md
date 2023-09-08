@@ -11,7 +11,7 @@ A comprehensive guide to the React application's structure and components.
 - [Utilities & Configurations](#utilities--configurations)
 - [Redux Architecture](#redux-architecture)
 - [Service Layer](#service-layer)
-- [Suggestions](#suggestions)
+- [Further Steps](#further-steps)
 - [Disclaimer](#disclaimer)
 
 ## Folder Structure
@@ -177,11 +177,14 @@ A comprehensive guide to the React application's structure and components.
 
 ---
 
-## Suggestions
+## Further Steps
 
 1. **Error Handling**: Handle various types of errors distinctly.
 2. **Unit Tests**: Write tests for actions, reducers, services.
 3. **Redux Toolkit**: Simplify boilerplate.
+4. **Refine Filtering**:
+   - Remove debouncers and handle input changes in a more optimal way.
+   - Implement a filtering procedure similar to how `sortingModel` works in the app.
 
 ---
 ### Disclaimer
