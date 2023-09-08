@@ -7,3 +7,5 @@ export { default as TableBody } from "./TableBody";
 export { default as PieChart } from "./PieChart";
 export { default as CustomModal } from "./CustomModal";
 export { default as SkeletonLoader } from "./SkeletonLoader";
+export { default as DataTable } from "./DataTable";
+

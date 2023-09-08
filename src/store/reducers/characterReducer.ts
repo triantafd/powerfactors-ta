@@ -10,7 +10,7 @@ import { Action } from "redux";
 import { RootState } from "store/store";
 import { ICharacterService } from "services/disneyService";
 
-interface CharacterState {
+export interface CharacterState {
   characters: ICharacterService["data"];
   info: ICharacterService["info"];
   loading: boolean;
