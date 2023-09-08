@@ -69,6 +69,7 @@ const DataTable = () => {
 
   useEffect(() => {
     dispatch(fetchCharacters(currentPage, pageSize, searchQuery, tvShowFilter));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, currentPage, pageSize, trigger]);
 
   useEffect(() => {
