@@ -1,6 +1,6 @@
 <!-- @format -->
 
-# React Application Documentation
+# Disney Characters Webpage Documentation (Technical Assignment)
 
 A comprehensive guide to the React application's structure and components.
 
@@ -12,6 +12,7 @@ A comprehensive guide to the React application's structure and components.
 - [Redux Architecture](#redux-architecture)
 - [Service Layer](#service-layer)
 - [Suggestions](#suggestions)
+- [Disclaimer](#disclaimer)
 
 ## Folder Structure
 
@@ -181,3 +182,9 @@ A comprehensive guide to the React application's structure and components.
 1. **Error Handling**: Handle various types of errors distinctly.
 2. **Unit Tests**: Write tests for actions, reducers, services.
 3. **Redux Toolkit**: Simplify boilerplate.
+
+---
+### Disclaimer
+    The logos and trademarks used in this technical assignment belong to their respective owners
+    I do not claim ownership or any rights to these logos.
+    They have been used solely for the purpose of this assignment.
