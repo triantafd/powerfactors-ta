@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # React Application Documentation
 
 A comprehensive guide to the React application's structure and components.
@@ -12,6 +14,7 @@ A comprehensive guide to the React application's structure and components.
 - [Suggestions](#suggestions)
 
 ## Folder Structure
+
     src/
     |-- components/
     | |-- App/
@@ -36,7 +39,6 @@ A comprehensive guide to the React application's structure and components.
     | |-- debounce.ts
     | `-- sorting.ts
 
-
 ## Components & Main Files Overview
 
 ### Main Entry Point: `index.js`
@@ -44,27 +46,27 @@ A comprehensive guide to the React application's structure and components.
 - **Description**: Entry point of the React application. App wrapped in Provider for Redux store access.
 - **Dependencies**: Bootstrap, FontAwesome, React, ReactDOM, Redux store.
 
-### App Component
+### App Component `src/components/App/App.js`
 
 - **Description**: Main layout of the application.
 - **Dependencies**: CSS styling from 'App.css'.
-- **Components**: 
+- **Components**:
   - **Layout**: Wrapper component that includes header and footer.
   - **DataTable**: Main content component.
 
-### Layout Component
+### Layout Component `src/components/Layout/Layout.js`
 
 - **Description**: Wraps the main content with a header and footer.
-- **Components**: 
+- **Components**:
   - **Header**: Top navigation and branding.
   - **Footer**: Bottom navigation and branding.
 
-### Header Component
+### Header Component `src/components/Layout/Header.js`
 
 - **Description**: Contains main navigation, disclaimer, login button.
 - **Features**: Navigation toggle, Disclaimer text, Login Modal.
 
-### Footer Component
+### Footer Component `src/components/Layout/Footer.js`
 
 - **Description**: Displays logo, links, social media icons, copyright note.
 
@@ -74,17 +76,65 @@ A comprehensive guide to the React application's structure and components.
 - **Dependencies**: Material-UI, Formik.
 - **Features**: Modal can open/close, Login & Cancel actions.
 
-### DataTable
+### DataTable `src/components/DataTable/DataTable.js`
+
 - **Description**: Fetches and displays character data.
-- **Components**:
+- **Components and Utilities**:
+
   - **Table**: A generic table container.
   - **TableHead**: Represents the header allowing sorting of columns.
   - **TableBody**: Contains rows of characters' data.
   - **TableRow**: A single row displaying character details.
-- **Utilities**: 
   - **Pagination**: Controls for page size and navigation.
   - **PieChart**: Visual representation of character film participation.
   - **SkeletonLoader**: Displays placeholder rows while data is fetched.
+  - **Character PopUp**: Presents a modal with detailed information about a selected character, including their image and appearances.
+  - **Features**:
+
+    - **Filtering**:
+      - **Search by Name**: Allows users to filter the table's data based on character names.
+      - **Search by TV Show**: Permits filtering of characters based on the TV shows they appeared in.
+    - **Sorting**:
+
+      - The table offers dynamic multi-level sorting using the `multiLevelSort` utility.
+      - Users can click on column headers to toggle the sorting direction for that particular column.
+
+    - **State Management (Redux)**:
+
+      - **Action**: `fetchCharacters`
+      - **Reducer**: State shape managed under `state.characters`
+
+    - **Filtering** Utilities and Configurations
+
+      - **Sorting**: `multiLevelSort`, `SortedByState`
+      - **Debounce**: `debounce`
+      - **Configuration**: `disneyCharacterColumns`
+
+    - **Styling**: Uses a dedicated CSS file: `DataTable.css`.
+
+    - **Filtering**:  How to Use
+      1. **Filtering**:
+        - Type in the `Search by Name` or `Search by TV Show` input fields to filter the table data.
+        - Filtering is debounced, meaning the API call to fetch filtered data will be made a short while after the user stops typing to ensure optimal performance.
+
+      2. **Sorting**:
+        - Click on the column headers to sort the data based on that column.
+        - The sorting direction (ascending/descending) toggles with each click.
+
+      3. **View Character Details**:
+        - Click on a table row to view detailed information about the selected character in a popup modal.
+
+      4. **View Pie Chart**:
+        - Click the `Show Pie Chart` button to open a modal displaying a pie chart of the characters based on their TV show appearances.
+
+      5. **Pagination**:
+        - Use the pagination controls below the table to navigate between pages or adjust the number of rows displayed per page.
+        
+      ## TODO
+
+      - **Refine Filtering**:
+        - Remove debouncers and handle input changes in a more optimal way.
+        - Implement a filtering procedure similar to how `sortingModel` works in the app.
 
 ## Utilities & Configurations
 
@@ -116,6 +166,7 @@ A comprehensive guide to the React application's structure and components.
 ### `src/services/disneyService.js`
 
 **DisneyService:**
+
 - **Description**: API service to fetch character data from Disney.
 - **Features**: Constructs API URL based on parameters for flexible requests.
 
@@ -127,9 +178,5 @@ A comprehensive guide to the React application's structure and components.
 
 1. **Error Handling**: Handle various types of errors distinctly.
 2. **Unit Tests**: Write tests for actions, reducers, services.
-3. **Selectors**: Place selectors in a separate file.
-4. **Normalizing Data**: Use the normalizr library.
-5. **Redux Toolkit**: Simplify boilerplate.
-6. **Caching**: Implement a caching mechanism.
-
-
+3. **Redux Toolkit**: Simplify boilerplate.
+4. **Caching**: Implement a caching mechanism.
