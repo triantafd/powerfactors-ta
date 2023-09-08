@@ -105,12 +105,10 @@ A comprehensive guide to the React application's structure and components.
       - Users can click on column headers to toggle the sorting direction for that particular column.
 
     - **State Management (Redux)**:
-
       - **Action**: `fetchCharacters`
       - **Reducer**: State shape managed under `state.characters`
 
     - **Filtering** Utilities and Configurations
-
       - **Sorting**: `multiLevelSort`, `SortedByState`
       - **Debounce**: `debounce`
       - **Configuration**: `disneyCharacterColumns`
@@ -121,22 +119,17 @@ A comprehensive guide to the React application's structure and components.
       - **Filtering**:
         - Type in the `Search by Name` or `Search by TV Show` input fields to filter the table data.
         - Filtering is debounced, meaning the API call to fetch filtered data will be made a short while after the user stops typing to ensure optimal performance.
-
       -  **Sorting**:
         - Click on the column headers to sort the data based on that column.
         - The sorting direction (ascending/descending) toggles with each click.
-
       - **View Character Details**:
         - Click on a table row to view detailed information about the selected character in a popup modal.
-
       - **View Pie Chart**:
         - Click the `Show Pie Chart` button to open a modal displaying a pie chart of the characters based on their TV show appearances.
-
       - **Pagination**:
         - Use the pagination controls below the table to navigate between pages or adjust the number of rows displayed per page.
 
       ## TODO
-
       - **Refine Filtering**:
         - Remove debouncers and handle input changes in a more optimal way.
         - Implement a filtering procedure similar to how `sortingModel` works in the app.
