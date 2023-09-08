@@ -4,8 +4,9 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import exporting from 'highcharts/modules/exporting';
+import exportData from 'highcharts/modules/export-data';
 exporting(Highcharts);
-
+exportData(Highcharts);
 
 interface PieChartProps<T> {
   data: T[];
@@ -15,6 +16,24 @@ interface PieChartProps<T> {
 
 const PieChart = <T,>({ data, getName, getValue }: PieChartProps<T>) => {
   const chartOptions = {
+    exporting: {
+      enabled: true,
+      buttons: {
+        contextButton: {
+          menuItems: [
+            'printChart',
+            'separator',
+            'downloadPNG',
+            'downloadJPEG',
+            'downloadPDF',
+            'downloadSVG',
+            'separator',
+            'downloadCSV',
+            'downloadXLS'
+          ]
+        }
+      }
+    },
     chart: {
       type: "pie",
     },
