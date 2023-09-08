@@ -44,10 +44,12 @@ const CharacterPopUpInfo: React.FC<{ selectedCharacter: ICharacter | null }> = (
   );
 }
 
-
 const DataTable = () => {
+  //redux state
   const dispatch: Dispatch<any> = useDispatch();
   const { characters, info, error, loading } = useSelector((state: RootState) => state.characters);
+
+  //component state
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(50);
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -173,7 +175,7 @@ const DataTable = () => {
               </Table>
             </div>
 
-            {/* < ----- PaginationOf Table  -----> */}
+            {/* < ----- Pagination Of Table  -----> */}
             <div className='flex w-10/12 mt-4'>
               <Pagination
                 pageSize={pageSize}
