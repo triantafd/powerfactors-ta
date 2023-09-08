@@ -62,7 +62,6 @@ const DataTable = () => {
   const [sortedCharacters, setSortedCharacters] = useState<ICharacter[]>(characters);
   const [sortingModel, setSortingModel] = useState<SortedByState<ICharacter>>([]);
   const [trigger, setTrigger] = useState(0);
-  const [trigger2, setTrigger2] = useState(0);
 
   const debounceFunc = useRef(debounce(() => {
     setTrigger(prevTrigger => prevTrigger + 1);
@@ -70,7 +69,6 @@ const DataTable = () => {
 
   useEffect(() => {
     dispatch(fetchCharacters(currentPage, pageSize, searchQuery, tvShowFilter));
-    setTrigger2((prev) => prev + 1)
   }, [dispatch, currentPage, pageSize, trigger]);
 
   useEffect(() => {

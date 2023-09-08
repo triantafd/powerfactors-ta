@@ -33,7 +33,7 @@ export const fetchDisneyCharacters = async (
   searchQuery?: string,
   tvShowFilter?: string
 ): Promise<ICharacterService> => {
-  let url = `https://api.disneyapi.dev/character?page=${currentPage}&pageSize=${pageSize}`;
+  let url = `${BASE_URL}?page=${currentPage}&pageSize=${pageSize}`;
 
   if (searchQuery) {
     url += `&name=${searchQuery}`;

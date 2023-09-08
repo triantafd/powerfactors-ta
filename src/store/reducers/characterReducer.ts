@@ -8,11 +8,7 @@ import {
 } from "../actions/characterActions";
 import { Action } from "redux";
 import { RootState } from "../store";
-import {
-  ICharacter,
-  ICharacterInfo,
-  ICharacterService,
-} from "../../services/disneyService";
+import { ICharacterService } from "../../services/disneyService";
 
 interface CharacterState {
   characters: ICharacterService["data"];
