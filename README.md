@@ -1,46 +1,135 @@
-# Getting Started with Create React App
+# React Application Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive guide to the React application's structure and components.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Folder Structure](#folder-structure)
+- [Components & Main Files Overview](#components--main-files-overview)
+- [Utilities & Configurations](#utilities--configurations)
+- [Redux Architecture](#redux-architecture)
+- [Service Layer](#service-layer)
+- [Suggestions](#suggestions)
 
-### `npm start`
+## Folder Structure
+    src/
+    |-- components/
+    | |-- App/
+    | |-- DataTable/
+    | |-- Footer/
+    | |-- Header/
+    | |-- Layout/
+    | |-- LoginForm/
+    | |-- CustomModal/
+    | |-- Pagination/
+    | |-- PieChart/
+    | |-- SkeletonLoader/
+    | |-- CharacterPopUpInfo/
+    | |-- Table/
+    | |-- TableHead/
+    | -- TableBody/ |-- conf/ | -- tableConfig.ts
+    |-- redux/
+    | |-- store/
+    | |-- actions/
+    | -- reducers/ |-- services/ | -- disneyService.ts
+    |-- utils/
+    | |-- debounce.ts
+    | `-- sorting.ts
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Components & Main Files Overview
 
-### `npm test`
+### Main Entry Point: `index.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Description**: Entry point of the React application. App wrapped in Provider for Redux store access.
+- **Dependencies**: Bootstrap, FontAwesome, React, ReactDOM, Redux store.
 
-### `npm run build`
+### App Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Description**: Main layout of the application.
+- **Dependencies**: CSS styling from 'App.css'.
+- **Components**: 
+  - **Layout**: Wrapper component that includes header and footer.
+  - **DataTable**: Main content component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Layout Component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Description**: Wraps the main content with a header and footer.
+- **Components**: 
+  - **Header**: Top navigation and branding.
+  - **Footer**: Bottom navigation and branding.
 
-### `npm run eject`
+### Header Component
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Description**: Contains main navigation, disclaimer, login button.
+- **Features**: Navigation toggle, Disclaimer text, Login Modal.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Footer Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Description**: Displays logo, links, social media icons, copyright note.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### LoginForm Component
 
-## Learn More
+- **Description**: Modal form for user login.
+- **Dependencies**: Material-UI, Formik.
+- **Features**: Modal can open/close, Login & Cancel actions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### DataTable
+- **Description**: Fetches and displays character data.
+- **Components**:
+  - **Table**: A generic table container.
+  - **TableHead**: Represents the header allowing sorting of columns.
+  - **TableBody**: Contains rows of characters' data.
+  - **TableRow**: A single row displaying character details.
+- **Utilities**: 
+  - **Pagination**: Controls for page size and navigation.
+  - **PieChart**: Visual representation of character film participation.
+  - **SkeletonLoader**: Displays placeholder rows while data is fetched.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Utilities & Configurations
+
+### `src/conf/tableConfig.ts`
+
+- **Description**: Specifies how each column in the data table should be presented and functioned.
+
+### `src/utils/debounce.ts`
+
+- **Description**: Debounces a function to avoid excessive calls.
+- **Usage**: Useful during window resize or input change.
+
+### `src/utils/sorting.ts`
+
+- **Description**: Utilities for sorting.
+- **Features**: Allows multi-level sorting based on multiple criteria.
+
+## Redux Architecture
+
+### `src/redux/`
+
+- **store.js**: Redux store configuration.
+- **reducers/characterReducer.js**: Reducer for character actions.
+- **reducers/index.js**: Combines all reducers.
+- **actions/characterActions.js**: Action creators for character-related actions.
+
+## Service Layer
+
+### `src/services/disneyService.js`
+
+**DisneyService:**
+- **Description**: API service to fetch character data from Disney.
+- **Features**: Constructs API URL based on parameters for flexible requests.
+
+---
+
+**Note**: Always consult the source code for more specific details and nuances.
+
+## Suggestions
+
+1. **Error Handling**: Handle various types of errors distinctly.
+2. **Unit Tests**: Write tests for actions, reducers, services.
+3. **Selectors**: Place selectors in a separate file.
+4. **Normalizing Data**: Use the normalizr library.
+5. **Redux Toolkit**: Simplify boilerplate.
+6. **Caching**: Implement a caching mechanism.
+
+
